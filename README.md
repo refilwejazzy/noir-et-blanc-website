@@ -1,6 +1,5 @@
-title: "Noir et Blanc Bistro 🍽️✨"
+Noir et Blanc Bistro 🍽️✨
 
-description: >
   Welcome to the Noir et Blanc Bistro website — a sleek, modern, and elegant online presence
   for a refined dining experience. This project showcases a beautifully designed restaurant website
   built with HTML, CSS, and Bootstrap, featuring a sophisticated black, white, and grey color palette. 🎨⚫⚪
@@ -14,7 +13,7 @@ features:
   - 🔗 Dynamic, reusable navbar across all pages for consistent navigation
 
 getting_started:
-  description: >
+ 
     To view the website locally and enjoy all features (including the dynamic navbar): 🚀
   steps:
     - description: Clone this repository to your local machine 🖥️
