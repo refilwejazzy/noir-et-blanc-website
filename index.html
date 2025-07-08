@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noir et Blanc Bistro</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      const currentPage = location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('#navbar-placeholder .nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center justify-content-center text-center text-white">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-4 fw-bold">Welcome to Noir et Blanc Bistro</h1>
+      <p class="lead">Where elegance meets flavor</p>
+      <a href="#menu" class="btn btn-outline-light mt-3">View Menu</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+<section id="about" class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="images/about.jpg" class="img-fluid rounded shadow" alt="About Noir et Blanc">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold">About Noir et Blanc</h2>
+        <p class="lead">Blending timeless French charm with modern elegance, Noir et Blanc Bistro offers a refined dining experience for the senses. From our carefully curated dishes to the warm ambiance, every detail is designed to make you feel at home — yet somewhere special.</p>
+        <p class="text-muted">Located in the heart of the city, we invite you to join us for breakfast, brunch, or an evening of unforgettable dining.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="py-5 text-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Our Signature Menu</h2>
+
+    <!-- Starters -->
+    <h3 class="fw-semibold mb-4">Starters</h3>
+    <div class="row g-4 mb-5">
+      <!-- Truffle Arancini -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-arancini.jpg" class="card-img-top dish-img" alt="Truffle Arancini" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="0" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Truffle Arancini <span class="text-muted float-end">R180</span></h5>
+            <p class="card-text">Served on a bed of tomato relish, finished with shaved parmesan.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beet Carpaccio -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-beet.jpg" class="card-img-top dish-img" alt="Caramelized Beet Carpaccio" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="1" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Caramelized Beet Carpaccio <span class="text-muted float-end">R160</span></h5>
+            <p class="card-text">With whipped goat cheese and toasted almonds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seared Scallops -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-scallops.jpg" class="card-img-top dish-img" alt="Seared Scallops" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="2" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Seared Scallops <span class="text-muted float-end">R230</span></h5>
+            <p class="card-text">Golden-browned scallops with brown butter and fresh chives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mains -->
+    <h3 class="fw-semibold mb-4">Mains</h3>
+    <div class="row g-4 mb-5">
+      <!-- Herb-Crusted Salmon -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-salmon.jpg" class="card-img-top dish-img" alt="Herb-Crusted Salmon" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="3" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Herb-Crusted Salmon <span class="text-muted float-end">R320</span></h5>
+            <p class="card-text">Oven-roasted with a lemon beurre blanc sauce, paired with asparagus.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wild Mushroom Risotto -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-risotto.jpg" class="card-img-top dish-img" alt="Wild Mushroom Risotto" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="4" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Wild Mushroom Risotto <span class="text-muted float-end">R280</span></h5>
+            <p class="card-text">Creamy arborio rice with truffle oil, wild mushrooms, and parmesan crisps.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sous Vide Duck Breast -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-duck.jpg" class="card-img-top dish-img" alt="Sous Vide Duck Breast" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="5" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Sous Vide Duck Breast <span class="text-muted float-end">R350</span></h5>
+            <p class="card-text">Served with parsnip purée and red wine reduction.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pappardelle al Limone -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-pasta.jpg" class="card-img-top dish-img" alt="Pappardelle al Limone" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="6" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Pappardelle al Limone <span class="text-muted float-end">R260</span></h5>
+            <p class="card-text">Fresh wide pasta tossed in a lemon cream sauce, garnished with fresh herbs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beef Fillet au Poivre -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-beef.jpg" class="card-img-top dish-img" alt="Beef Fillet au Poivre" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="7" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Beef Fillet au Poivre <span class="text-muted float-end">R400</span></h5>
+            <p class="card-text">With green peppercorn sauce, baked potato, and roasted asparagus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <h3 class="fw-semibold mb-4">Desserts</h3>
+    <div class="row g-4">
+      <!-- Vanilla Bean Cheesecake -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-cheesecake.jpg" class="card-img-top dish-img" alt="Vanilla Bean Cheesecake" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="8" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Vanilla Bean Cheesecake <span class="text-muted float-end">R150</span></h5>
+            <p class="card-text">With a dark chocolate base and seasonal berry compote.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Molten Chocolate Cake -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="images/menu-chocolate.jpg" class="card-img-top dish-img" alt="Molten Chocolate Cake" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="9" role="button" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">Molten Chocolate Cake <span class="text-muted float-end">R160</span></h5>
+            <p class="card-text">Served warm with a liquid ganache center and vanilla bean ice cream.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Drinks -->
+<h3 class="fw-semibold mb-4">Drinks</h3>
+<div class="row g-4 mb-5">
+  <!-- Red Wine -->
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="images/menu-redwine.jpg" class="card-img-top dish-img" alt="Red Wine" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="10" role="button" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">Red Wine <span class="text-muted float-end">R85</span></h5>
+        <p class="card-text">A full-bodied red with rich berry flavors.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- White Wine -->
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="images/menu-whitewine.jpg" class="card-img-top dish-img" alt="White Wine" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="11" role="button" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">White Wine <span class="text-muted float-end">R85</span></h5>
+        <p class="card-text">Crisp and refreshing with citrus notes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Classic Mojito -->
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="images/menu-mojito.jpg" class="card-img-top dish-img" alt="Classic Mojito" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="12" role="button" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">Classic Mojito <span class="text-muted float-end">R75</span></h5>
+        <p class="card-text">Fresh lime, mint, white rum, and soda water.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Espresso Martini -->
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="images/menu-espressomartini.jpg" class="card-img-top dish-img" alt="Espresso Martini" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="13" role="button" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">Espresso Martini <span class="text-muted float-end">R80</span></h5>
+        <p class="card-text">Vodka, coffee liqueur, and fresh espresso.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sparkling Water -->
+  <div class="col-md-6 col-lg-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="images/menu-sparklingwater.jpg" class="card-img-top dish-img" alt="Sparkling Water" data-bs-toggle="modal" data-bs-target="#menuModal" data-bs-slide-to="14" role="button" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">Sparkling Water <span class="text-muted float-end">R30</span></h5>
+        <p class="card-text">Refreshing mineral water with bubbles.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 text-white position-relative" style="background: url('images/table.jpg') center/cover no-repeat;">
+  <div class="overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); z-index:0;"></div>
+  <div class="container position-relative" style="z-index: 1;">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="John Doe">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Your message here..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-light px-4">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

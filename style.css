@@ -1,0 +1,47 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('images/hero.jpg') center center/cover no-repeat;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
+  z-index: 1;
+}
+
+.hero .hero-content {
+  z-index: 2;
+  position: relative;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: black;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#menu {
+  background-color: #121212;  /* a dark grey/black shade */
+  color: #fff;                /* white text */
+}
