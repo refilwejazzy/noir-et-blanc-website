@@ -18,7 +18,7 @@ getting_started:
     To view the website locally and enjoy all features (including the dynamic navbar): 🚀
   steps:
     - description: Clone this repository to your local machine 🖥️
-      command: git clone https://github.com/your-username/noir-et-blanc-bistro.git
+      command: git clone(https://github.com/refilwejazzy/noir-et-blanc-website)
     - description: Navigate into the project folder 📂
       command: cd noir-et-blanc-bistro
     - description: Serve the site using a local web server (e.g., Python) 🐍
